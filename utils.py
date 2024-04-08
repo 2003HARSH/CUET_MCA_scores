@@ -64,11 +64,11 @@ def answer_mapper(q_id,actual_df):
 def score_generator(student_df):
     score=[]
     for i in range(75):
-        if student_df['chosen_option'].iloc[i]==0:
+        if student_df['chosen_option'].iloc[i,]==0:
             score.append(0)
-        elif student_df['chosen_option'].iloc[i]==student_df['correct_option'].iloc[i]:
+        elif student_df['chosen_option'].iloc[i,]==student_df['correct_option'].iloc[i,]:
             score.append(4)
-        elif student_df['chosen_option'].iloc[i]!=student_df['correct_option'].iloc[i]:
+        elif student_df['chosen_option'].iloc[i,]!=student_df['correct_option'].iloc[i,]:
             score.append(-1)
     
     student_df['marks']=np.array(score)
