@@ -34,7 +34,7 @@ def student_df_generator(link):
 
 def actual_df_generator():
     with open('answer.txt','r',encoding='utf-8')as f:
-        soup=BeautifulSoup(f,'html.parser')
+        soup=BeautifulSoup(f,features='html.parser')
         
         l=[]
         for i in soup.find_all('td'):
