@@ -7,6 +7,7 @@ import streamlit as st
 def student_df_generator(link):
     try:
         response=requests.get(link)
+        st.write(response.text)
         soup=BeautifulSoup(response.text)
         l=[]
         for i in soup.find_all('td',class_='bold'):
