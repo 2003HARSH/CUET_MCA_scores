@@ -20,6 +20,7 @@ if link:
 
         student_df['correct_option']=student_df['q_id'].apply(answer_mapper,args=(actual_df,))
 
+        st.dataframe(student_df)
 
         student_df=score_generator(student_df)
 
