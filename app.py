@@ -7,20 +7,19 @@ st.set_page_config(
 st.title("Welcome to CUET MCA (SCQP09) score checker")
 st.markdown("""---""")
 st.write('Step',1,': Open your Answersheet form CUET PG website.')
-st.write('Step',2,': Copy the link of your Answersheet and paste it here.')
+st.write('Step',2,': Right-click on the yellow part at the top of your answersheet and select "Save As."')
+st.write('Step',3,': Save the file as a .html document')
 
-link=st.text_input(placeholder='Enter the link of your answersheet',label='')
-st.write('Step',3,': Hit Enter')
+html_page=st.file_uploader('Upload the saved .html file using our tool.')
 st.markdown("""---""")
 
-if link:
-    student_df=student_df_generator(link)
+if html_page:
+    student_df=student_df_generator(html_page)
     if student_df is not None:
         actual_df=actual_df_generator()
 
         student_df['correct_option']=student_df['q_id'].apply(answer_mapper,args=(actual_df,))
 
-        st.dataframe(student_df)
 
         student_df=score_generator(student_df)
 

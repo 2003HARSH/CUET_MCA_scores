@@ -4,11 +4,9 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-def student_df_generator(link):
+def student_df_generator(file):
     try:
-        response=requests.get(link)
-        st.write(response.text)
-        soup=BeautifulSoup(response.text)
+        soup=BeautifulSoup(file,'html.parser')
         l=[]
         for i in soup.find_all('td',class_='bold'):
             l.append(i.text.strip())
@@ -34,8 +32,8 @@ def student_df_generator(link):
 
 
 def actual_df_generator():
-    with open('answer.txt','r',encoding='utf-8')as f:
-        soup=BeautifulSoup(f,features='html.parser')
+    with open('answer.html','r',encoding='utf-8')as f:
+        soup=BeautifulSoup(f,'html.parser')
         
         l=[]
         for i in soup.find_all('td'):
@@ -65,11 +63,11 @@ def answer_mapper(q_id,actual_df):
 def score_generator(student_df):
     score=[]
     for i in range(75):
-        if student_df['chosen_option'].iloc[i,]==0:
+        if student_df['chosen_option'].iloc[i]==0:
             score.append(0)
-        elif student_df['chosen_option'].iloc[i,]==student_df['correct_option'].iloc[i,]:
+        elif student_df['chosen_option'].iloc[i]==student_df['correct_option'].iloc[i]:
             score.append(4)
-        elif student_df['chosen_option'].iloc[i,]!=student_df['correct_option'].iloc[i,]:
+        elif student_df['chosen_option'].iloc[i]!=student_df['correct_option'].iloc[i]:
             score.append(-1)
     
     student_df['marks']=np.array(score)
