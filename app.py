@@ -4,7 +4,7 @@ st.set_page_config(
         page_title="CUET MCA score checker",
 )
 
-st.title("Welcome to CUET MCA score checker")
+st.title("Welcome to CUET MCA (SCQP09) score checker")
 st.markdown("""---""")
 st.write('Step',1,': Open your Answersheet form CUET PG website.')
 st.write('Step',2,': Copy the link of your Answersheet and paste it here.')
