@@ -7,7 +7,7 @@ st.set_page_config(
 st.title("Welcome to CUET MCA (SCQP09) score checker")
 st.markdown("""---""")
 st.write('Step',1,': Open your Answersheet form CUET PG website.')
-st.write('Step',2,': Press Ctrl + S to save the file as a .html document"')
+st.write('Step',2,': Press Ctrl + S to save the file as a .html document.')
 
 html_page=st.file_uploader('Upload the saved .html file to this website.')
 st.markdown("""---""")
