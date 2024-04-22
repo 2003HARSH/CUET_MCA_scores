@@ -18,6 +18,7 @@ In CUET, checking scores manually can be a tedious task, involving matching each
 ## 🛠️ Installation
 
 No installation required. The Automated CUEt MCA Score Checker is accessible online.
+[Live Demo](cuet-mca-score.streamlit.app)
 
 ## 🤝 Contributing
 
