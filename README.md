@@ -1,4 +1,4 @@
-# Automated CUEt MCA Score Checker
+# Automated CUET MCA Score Checker
 
 In CUET, checking scores manually can be a tedious task, involving matching each answer with the original sheet. Introducing the **Automated CUET MCA Score Checker** - a convenient solution to simplify the score-checking process.
 
